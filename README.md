@@ -3,8 +3,10 @@ Counter-Strike Global Offensive maps overviews generated from game files (ingame
 <hr />
 Idea from SoupKitchenHero (http://www.reddit.com/r/GlobalOffensive/comments/20il57/an_album_of_csgo_map_overviews/)
 <hr />
-* The original .dds files are in csgo/resource/overviews folder.
-* Used http://image.online-convert.com/convert-to-png to convert the .dds files to .png files using "best quality".
+<ul>
+<li>The original .dds files are in csgo/resource/overviews folder.</li>
+<li>Used http://image.online-convert.com/convert-to-png to convert the .dds files to .png files using "best quality".</li>
+</ul>
 <hr />
 <table>
 <tr>

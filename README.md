@@ -7,6 +7,7 @@ Idea from SoupKitchenHero (http://www.reddit.com/r/GlobalOffensive/comments/20il
 <li>The original .dds files are in csgo/resource/overviews folder.</li>
 <li>Used http://image.online-convert.com/convert-to-png to convert the .dds files to .png files using "best quality".</li>
 </ul>
+<p align="center"><a href="http://www.online-convert.com/"><img src="http://cdn.online-convert.com/images/logo-top.png" alt="www.online-convert.com"></a></p>
 <hr />
 <table>
 <tr>

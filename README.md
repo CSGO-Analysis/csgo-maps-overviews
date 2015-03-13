@@ -30,3 +30,7 @@ Idea from SoupKitchenHero (http://www.reddit.com/r/GlobalOffensive/comments/20il
 <th></th>
 </tr>
 </table>
+
+https://developer.valvesoftware.com/wiki/Creating_a_working_mini-map (upload txt files + icons)
+
+http://blog.counter-strike.net/index.php/feed/

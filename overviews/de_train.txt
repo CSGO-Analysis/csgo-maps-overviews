@@ -13,7 +13,7 @@
 	"TSpawn_x"	"0.12"
 	"TSpawn_y"	"0.25"
 
-	"bombA_x"	"0.59"
+	"bombA_x"	"0.63"
 	"bombA_y"	"0.49"
 	"bombB_x"	"0.52"
 	"bombB_y"	"0.76"

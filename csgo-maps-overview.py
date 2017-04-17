@@ -14,7 +14,7 @@ API_KEY = sys.argv[1]
 DIR = "overviews"
 URL = "http://api2.online-convert.com/jobs"
 TYPE_IN = "dds"
-TYPE_OUT = "png"
+TYPE_OUT = "jpg"
 headers = {
     'x-oc-api-key': API_KEY,
     'content-type': "application/json",

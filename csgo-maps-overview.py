@@ -13,7 +13,7 @@ import sys
 API_KEY = sys.argv[1]
 API_URL = "http://api2.online-convert.com/jobs"
 TYPE_IN = "dds"
-TYPE_OUT = "jpg"
+TYPE_OUT = sys.argv[2]
 HEADER = {
     'x-oc-api-key': API_KEY,
     'content-type': "application/json",

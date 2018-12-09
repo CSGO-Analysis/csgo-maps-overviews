@@ -35,14 +35,14 @@ FILES = [
     'de_nuke_lower_radar',
     'de_overpass_radar',
     'de_train_radar',
-	'de_biome_radar',
-	'de_biome_radar_spectate',
-	'de_austria_radar',
-	'de_austria_radar_spectate',
-	'de_castle_radar',
-	'de_castle_radar_spectate',
-	'de_subzero_radar',
-	'dz_blacksite_radar'
+    'de_biome_radar',
+    'de_biome_radar_spectate',
+    'de_austria_radar',
+    'de_austria_radar_spectate',
+    'de_castle_radar',
+    'de_castle_radar_spectate',
+    'de_subzero_radar',
+    'dz_blacksite_radar'
 ]
 
 print "Starting..."

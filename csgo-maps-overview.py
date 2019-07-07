@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 import json
 import os
-import requests
-import subprocess
-import pprint
+import sys
 import time
 import urllib
-import sys
+
+import requests
 
 # https://www.online-convert.com
 API_KEY = sys.argv[1]
@@ -20,7 +19,7 @@ HEADER = {
     'cache-control': "no-cache"
 }
 API_REQUEST_WAIT = 10
-REMOTE_URL = "http://www.tafelrunde.net/csgods/resource/overviews/"  # contains updated game files
+FILE_URLS = sys.argv[3]  # file with urls containing updated game files
 LOCAL_DIR = "overviews"
 FILES = [
     'de_cache_radar',
@@ -42,13 +41,29 @@ FILES = [
     'de_castle_radar',
     'de_castle_radar_spectate',
     'de_subzero_radar',
-    'dz_blacksite_radar'
+    'de_vertigo_radar',
+    'de_vertigo_lower_radar',
+    'de_zoo_radar',
+    'de_zoo_radar_spectate',
+    'dz_blacksite_radar',
+    'dz_sirocco',
+    'dz_sirocco_radar',
+    'de_season_radar',
+    'de_season_radar_spectate'
 ]
 
-print "Starting..."
+print("Starting...")
+
+remote_url = None
+
+f = open(FILE_URLS, "r")
+for url in f:
+    if requests.get(url + "de_dust2.dds").status_code == 200:
+        remote_url = url
+        break
 
 for filename in FILES:
-    payload = "{\"input\":[{\"type\":\"remote\",\"source\":\"" + REMOTE_URL + filename + "." + TYPE_IN + "\"}],\"conversion\":[{\"category\":\"image\",\"target\":\"" + TYPE_OUT + "\"}]}"
+    payload = '{"input":[{"type":"remote","source":"' + remote_url + filename + '.' + TYPE_IN + '"}],"conversion":[{"category":"image","target":"' + TYPE_OUT + '"}]}'
 
     response = requests.request("POST", API_URL, data=payload, headers=HEADER)
     response_json = json.loads(response.text)
@@ -56,9 +71,9 @@ for filename in FILES:
 
     result = False
     while not result:
-        print "Waiting",
+        print("Waiting",)
         for i in range(0, API_REQUEST_WAIT):
-            print ".",
+            print(".",)
             time.sleep(1)
 
         response = requests.request("GET", API_URL + "/" + job_id, headers=HEADER)

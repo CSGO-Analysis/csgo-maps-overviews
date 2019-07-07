@@ -58,6 +58,7 @@ remote_url = None
 
 f = open(FILE_URLS, "r")
 for url in f:
+    url = url.strip()
     if requests.get(url + "de_dust2.dds").status_code == 200:
         remote_url = url
         break

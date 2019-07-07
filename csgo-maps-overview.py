@@ -18,7 +18,7 @@ HEADER = {
     'content-type': "application/json",
     'cache-control': "no-cache"
 }
-API_REQUEST_WAIT = 10
+API_REQUEST_WAIT = 15
 FILE_URLS = sys.argv[3]  # file with urls containing updated game files
 LOCAL_DIR = "overviews"
 FILES = [
@@ -26,7 +26,7 @@ FILES = [
     'de_cache_radar_spectate',
     'de_cbble_radar',
     'de_dust2_radar',
-    'de_dust2_radar_spectate',
+    'de_dust2_higher_radar',
     'de_inferno_radar',
     'de_mirage_radar',
     'de_mirage_radar_spectate',
@@ -56,12 +56,12 @@ print("Starting...")
 
 remote_url = None
 
-f = open(FILE_URLS, "r")
-for url in f:
-    url = url.strip()
-    if requests.get(url + "de_dust2.dds").status_code == 200:
-        remote_url = url
-        break
+with open(FILE_URLS, "r") as f:
+    for line in f:
+        url = line.strip()
+        if requests.get(url + "de_dust2_radar.dds").status_code == 200:
+            remote_url = url
+            break
 
 for filename in FILES:
     payload = '{"input":[{"type":"remote","source":"' + remote_url + filename + '.' + TYPE_IN + '"}],"conversion":[{"category":"image","target":"' + TYPE_OUT + '"}]}'
@@ -72,9 +72,9 @@ for filename in FILES:
 
     result = False
     while not result:
-        print("Waiting",)
+        sys.stdout.write("\r\nWaiting")
         for i in range(0, API_REQUEST_WAIT):
-            print(".",)
+            sys.stdout.write(".")
             time.sleep(1)
 
         response = requests.request("GET", API_URL + "/" + job_id, headers=HEADER)

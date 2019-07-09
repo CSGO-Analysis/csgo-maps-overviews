@@ -59,6 +59,7 @@ remote_url = None
 with open(FILE_URLS, "r") as f:
     for line in f:
         url = line.strip()
+	print("URL: " + url)
         if requests.get(url + "de_dust2_radar.dds").status_code == 200:
             remote_url = url
             break

@@ -20,10 +20,6 @@ Convert .dds files (radar files from /csgo/resource/overviews/) to jpg files
 </tr>
 <tr>
 <th><img src="https://github.com/CSGO-Analysis/csgo-maps-overviews/raw/master/overviews/de_overpass_radar.jpg" width="400" heigth="400" /><br>de_overpass</th>
-<th><img src="https://github.com/CSGO-Analysis/csgo-maps-overviews/raw/master/overviews/de_season_radar.jpg" width="400" heigth="400" /><br>de_season</th>
-</tr>
-<tr>
 <th><img src="https://github.com/CSGO-Analysis/csgo-maps-overviews/raw/master/overviews/de_train_radar.jpg" width="350" heigth="350" /><br>de_train</th>
-<th></th>
 </tr>
 </table>
